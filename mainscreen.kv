@@ -1,0 +1,72 @@
+<MyLayout>
+#69,55,86
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+        cols:1
+        padding:dp(15)
+        canvas.before:
+            Color:
+                rgba:69/255,55/255,86/255,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        BoxLayout:
+            size_hint_y:.25
+            cols:2
+            Label:
+                text:"TỔNG QUAN DỮ LIỆU"
+                color:1,1,1,1
+                font_style:"H6"
+
+            MDIconButton:
+                icon: 'cog-outline'
+        BoxLayout:
+            orientation:'vertical'
+            size_hint_y:.75
+            cols:2
+            padding:[dp(15),dp(15),dp(15),dp(35)]
+            spacing:dp(15)
+            BoxLayout:
+                spacing:10
+                MainButton:
+                    text:"Nhiệt độ"
+                    on_press:print("Hi")
+                MainButton:
+                    text:"Độ Ẩm"
+
+            BoxLayout:
+                spacing:10
+                MainButton:
+                    image:"images/"
+                    text:"Nồng độ bụi mịn"
+                MainButton:
+                    text:"Thời tiết"
+
+
+<MainButton@MDCard>
+	md_bg_color:69/255,55/255,86/255,0.2
+    padding:dp(15)
+    spacing:dp(15)
+    radius:dp(25)
+    ripple_behavior: True
+    image:''
+    text:""
+    items_count:""
+    subtext:''
+
+    orientation:'vertical'
+    Image:
+        source:root.image
+    MDBoxLayout:
+        orientation:'vertical'
+        MDLabel:
+            halign:"center"
+            text:root.text
+            font_style:"H6"
+        MDLabel:
+            halign:"center"
+            font_style:"Caption"
+        MDLabel:
+            halign:"center"
+            text:root.items_count
